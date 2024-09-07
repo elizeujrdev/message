@@ -26,8 +26,13 @@
       margin-right: 10px;
       color: #555555;
       font-family: Arial, sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI";
-      margin-top: 63px; /* Default margin-top */
+      margin-top: 50px; /* Default margin-top */
       transition: margin-top 0.3s ease; /* Smooth transition for margin-top */
+    }
+
+    .avatar.type2{
+      margin-top: 60px;
+
     }
 
     .avatar img {
@@ -38,8 +43,8 @@
     }
 
     .speech-wrapper {
-      padding: 5px;
-      max-width: 400px;
+      padding: 5px ;
+      max-width: 450px;
       position: relative;
     }
 
@@ -54,7 +59,7 @@
     }
 
     .txt {
-      padding: 8px 55px 8px 14px;
+      padding: 5px 35px 10px 14px;
     }
 
     .name {
@@ -78,7 +83,7 @@
     .timestamp {
       font-size: 11px;
       position: absolute;
-      bottom: 8px;
+      bottom: 4px;
       right: 10px;
       text-transform: uppercase;
       color: #999;
@@ -107,6 +112,12 @@
       .bubble {
         width: 100%;
       }
+
+      .avatar{
+        margin-top: 63px;
+
+      }
+
     }
 
     @keyframes slideInUp {
@@ -148,10 +159,11 @@
       var specialMessage = "Fala, parceiro(a)! Quanto mais rápida e clara a foto, mais rápido emitimos a nota e liberamos sua viagem. Assim que o ticket de descarga for aprovado, eu envio para a transportadora liberar seu saldo. Valeu!";
 
       if (messageText === specialMessage) {
-        document.getElementById('avatar').style.marginTop = '80px'; // Adjust margin-top
+        document.getElementById('avatar').classList.add('type2')
 
-        // Get current time in Brazilian format
-        function formatTime() {
+      }
+
+      function formatTime() {
           var now = new Date();
           var hours = ("0" + now.getHours()).slice(-2);
           var minutes = ("0" + now.getMinutes()).slice(-2);
@@ -160,12 +172,6 @@
 
         // Set timestamp
         document.getElementById('timestamp').innerText = formatTime();
-
-        // Add a delay before triggering vibration
-        setTimeout(function() {
-            navigator.vibrate(500);
-        }, 1000); // 1 second delay
-      }
     });
   </script>
 </body>
