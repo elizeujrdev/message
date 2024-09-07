@@ -163,12 +163,7 @@
 
         // Add a delay before triggering vibration
         setTimeout(function() {
-          if ("vibrate" in navigator) {
-            // Vibrate the device for 500 milliseconds
             navigator.vibrate(500);
-          } else {
-            alert("Vibration API is not supported in this browser.");
-          }
         }, 1000); // 1 second delay
       }
     });
